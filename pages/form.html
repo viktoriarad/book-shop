@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Poor+Story&family=Roboto+Slab:wght@300;400;700&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+  <title>Order Page</title>
+  <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+  <div class="order-form-wrapper">
+    <h2 class="order-title">Order Page</h2>
+    <form action="index.html" class="form">
+      <label for="name" class="order-label mandatory">Name</label>
+      <input type="text" class="order-input" id="name" required placeholder="enter your name" pattern="[a-zA-Z]{4,}">
+
+      <label for="surname" class="order-label mandatory">Surname</label>
+      <input type="text" class="order-input invalid" id="surname" required placeholder="enter your surname" pattern="[a-zA-Z]{5,}">
+
+      <label for="delivery-day" class="order-label mandatory">Delivery date</label>
+      <input type="date" class="order-input invalid" required id="delivery-day">
+
+      <label for="street" class="order-label mandatory">Street</label>
+      <input type="text" class="order-input invalid" id="street" pattern=".{5,}" required placeholder="enter your street">
+
+      <label for="house" class="order-label mandatory">House number</label>
+      <input type="number" class="order-input invalid" id="house" min="1" required placeholder="enter your house number">
+
+      <label for="flat" class="order-label mandatory">Flat number</label>
+      <input type="text" class="order-input invalid" id="flat" pattern="\d+([-]\d+){0,1}" required placeholder="enter your flat number">
+
+      <fieldset class="input-radio-wrapper">
+        <legend class="mandatory">Choose payment type</legend>
+        <input type="radio" class="custom-radio invalid" name="styles" required id="payment-type-card">
+        <label for="payment-type-card" class="margin">Card</label>
+        <input type="radio" class="custom-radio invalid" name="styles" required id="payment-type-cash">
+        <label for="payment-type-cash">Cash</label>
+      </fieldset>
+
+      <fieldset class="input-checklist-wrapper">
+        <legend>Choose 2 gifts</legend>
+        <div class="checklist-wrapper">
+          <input type="checkbox" class="checklist" id="gift1" onclick="return validateGiftsSelection();">
+          <label for="gift1" class="margin">pack as a gift</label>
+        </div>
+        <div class="checklist-wrapper">
+          <input type="checkbox" class="checklist " id="gift2" onclick="return validateGiftsSelection();">
+          <label for="gift2">add postcard</label>
+        </div>
+        <div class="checklist-wrapper">
+          <input type="checkbox" class="checklist" id="gift3" onclick="return validateGiftsSelection();">
+          <label for="gift3">provide 2% discount to the next time</label>
+        </div>
+        <div class="checklist-wrapper">
+          <input type="checkbox" class="checklist" id="gift4" onclick="return validateGiftsSelection();">
+          <label for="gift4">branded pen or pencil</label>
+        </div>
+      </fieldset>
+
+
+      <button class="confirm-btn">Confirm</button>
+
+    </form>
+  </div>
+  <script src="form.js"></script>
+</body>
+</html>
