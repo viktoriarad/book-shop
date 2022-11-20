@@ -151,6 +151,19 @@ input[type="radio"] {
     transition: 0.3s;
 }
 
+.main-page-btn{
+    background: linear-gradient(90deg, rgba(69,104,220,1) 0%, rgba(176,106,179,1) 100%);
+    font-size: 16px;
+    width: 200px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: block;
+}
+
 
 
 input:invalid ~ button,

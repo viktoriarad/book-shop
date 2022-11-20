@@ -56,9 +56,19 @@ form.addEventListener('submit', (e) => {
     e.target.remove();
 
     const confirmationMsg = document.createElement('p');
+    const mainPageBtn = document.createElement('button');
+
+    mainPageBtn.classList.add('main-page-btn');
     confirmationMsg.classList.add('confirmation-msg');
+    mainPageBtn.innerHTML = "Back to main page";
     confirmationMsg.innerHTML = `The order created. The delivery address is ${orderData.street} house ${orderData.house} flat ${orderData.flat}. Customer ${orderData.name} ${orderData.surname}.`
 
+    mainPageBtn.addEventListener('click', () => {
+        window.location.href = "../index.html";
+    })
+
     document.querySelector('.order-form-wrapper').appendChild(confirmationMsg);
+    document.querySelector('.order-form-wrapper').appendChild(mainPageBtn);
+
 
 })
