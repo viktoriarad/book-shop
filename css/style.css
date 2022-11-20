@@ -215,7 +215,8 @@ a {
     opacity: 0.7;
 }
 
-.description-wrapper {
+.description-wrapper,
+.popup-wrapper{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -228,7 +229,8 @@ a {
     z-index: 1;
 }
 
-.active-description {
+.active-description,
+.active-popup {
     display: block;
 }
 

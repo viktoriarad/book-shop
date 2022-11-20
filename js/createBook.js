@@ -14,6 +14,11 @@ export function createBook(bookData, orderList) {
     const buyBtn = document.createElement('button');
     const modalWindow = document.createElement('div');
 
+    const popup = document.createElement('div');
+    const popupText = document.createElement('p');
+    const popupCloseBtn = document.createElement('button');
+    const popupCloseIcon = document.createElement('i');
+
     bookWrapper.classList.add('book-wrapper');
     bookImg.classList.add('book-img');
     authorTitle.classList.add('author-name');
@@ -28,6 +33,11 @@ export function createBook(bookData, orderList) {
     buyBtn.classList.add('buy-btn', 'btn');
     modalWindow.classList.add('modal-window');
 
+    popup.classList.add('popup-wrapper');
+    popupText.classList.add('popup-text');
+    popupCloseBtn.classList.add('close-btn');
+    popupCloseIcon.classList.add("fa-solid", "fa-xmark" ,"close-icon");
+
     descriptionCloseIcon.setAttribute('title', 'Close the description')
 
 
@@ -36,6 +46,8 @@ export function createBook(bookData, orderList) {
     bookTitleEl.innerHTML = title;
     descriptionBtn.innerHTML = "see more";
     descriptionText.innerHTML = description;
+
+    popupText.innerHTML = "Book was added to shopping cart"
 
     priceEl.innerHTML = price;
     buyBtn.innerHTML = 'Buy';
@@ -53,6 +65,11 @@ export function createBook(bookData, orderList) {
     priceBuyBtnWrapper.appendChild(buyBtn);
     document.body.appendChild(modalWindow);
 
+    bookWrapper.appendChild(popup);
+    popup.appendChild(popupText);
+    popup.appendChild(popupCloseBtn);
+    popupCloseBtn.appendChild(popupCloseIcon);
+
 
     descriptionBtn.addEventListener('click', function (e) {
         descriptionWrapper.classList.add('active-description');
@@ -67,6 +84,18 @@ export function createBook(bookData, orderList) {
     buyBtn.addEventListener('click', () => {
         orderList.push(id);
     })
+
+
+    buyBtn.addEventListener('click', function (e) {
+        popup.classList.add('active-popup');
+        modalWindow.classList.add('modal-window-active');
+    });
+
+    popupCloseIcon.addEventListener('click', function (e) {
+        popup.classList.remove('active-popup');
+        modalWindow.classList.remove('modal-window-active')
+    })
+
 
 
     return bookWrapper;
